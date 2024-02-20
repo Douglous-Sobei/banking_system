@@ -178,7 +178,7 @@
 
                                         </div>
                                         <div class="profile-head">
-                                            <a href="#">
+                                            <a href="{% url 'account:account' %}">
                                                 <h5>{{kyc.full_name|title}}</h5>
                                             </a>
                                             <p class="wallet-id"><small>Account No. {{ request.user.account.account_number }}</small></p>
@@ -205,11 +205,11 @@
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="sidebar-logo">
-                            <a href="#"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
+                            <a href="{% url 'account:account' %}"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
                         </div>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{% url 'account:account' %}">
                                     <img src="#" alt="Dashboard"> <span>Dashboard</span>
                                 </a>
                             </li>
@@ -256,7 +256,7 @@
                         </ul>
                         <ul class="bottom-item">
                             <li class="active">
-                                <a href="#">
+                                <a href="{% url 'account:account' %}">
                                     <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>Account</span>
                                 </a>
                             </li>

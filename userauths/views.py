@@ -9,29 +9,25 @@ from userauths.forms import UserRegistrationForm
 def RegisterView(request):
     if request.user.is_authenticated:
         messages.warning(request, f"You are already logged in.")
-        return redirect("core:index")
+        return redirect("account:account")
 
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            new_user = form.save()
-            username = new_user.username
+            new_user = form.save()  # new_user.email
+            username = form.cleaned_data.get("username")
             messages.success(
-                request, f"Hey {username}, your account was created successfully")
-            return redirect('core:index')
+                request, f"Hey {username}, your account was created successfully.")
+            new_user = authenticate(username=form.cleaned_data['email'],
+                                    password=form.cleaned_data['password1'])
+            login(request, new_user)
+            return redirect("account:account")
     else:
         form = UserRegistrationForm()
-
     context = {
         "form": form
     }
     return render(request, "userauths/sign-up.html", context)
-
-
-def logoutView(request):
-    logout(request)
-    messages.success(request, "You have been logged out.")
-    return redirect("core:index")
 
 
 def LoginView(request):
@@ -46,7 +42,7 @@ def LoginView(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "You are logged in")
-                return redirect("core:index")
+                return redirect("account:account")
             else:
                 messages.warning(
                     request, "Username or password does not exist")
@@ -54,4 +50,13 @@ def LoginView(request):
         except:
             messages.warning(request, "User does not exist")
 
+    if request.user.is_authenticated:
+        messages.warning(request, "You are already logged in")
+        return redirect("account:account")
     return render(request, "userauths/sign-in.html")
+
+
+def logoutView(request):
+    logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect("userauths:sign-in")
