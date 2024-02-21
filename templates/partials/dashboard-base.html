@@ -39,7 +39,7 @@
                             <img src="{% static 'assets1/images/icon/menu.png' %}" alt="icon">
                         </div>
                         <form method="POST" class="flex-fill">
-                            
+
                             <div class="form-group d-flex align-items-center">
                                 <img src="{% static 'assets1/images/icon/search.png' %}" alt="icon">
                                 <input type="text" placeholder="Type to search...">
@@ -71,10 +71,10 @@
                                     <ul>
                                         {% for n in notifications %}
                                         <li>
-                                            
+
                                             <a href="javascript:void(0)" class="d-flex">
                                                 <div class="text-area">
-                                                    
+
                                                     {% if n.notification_type == "Credit Alert" %}
                                                     <p class="mdr">You received a payment of <b>${{n.amount}}</b></p>
                                                     {% endif %}
@@ -82,24 +82,28 @@
                                                     <p class="mdr">You sent a payment of <b>${{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Sent Payment Request" %}
-                                                    <p class="mdr">You sent a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You sent a <b>payment request</b> of
+                                                        <b>${{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Recieved Payment Request" %}
-                                                    <p class="mdr">You received a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You received a <b>payment request</b> of
+                                                        <b>${{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Funded Credit Card" %}
-                                                    <p class="mdr">You funded your credit card with <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You funded your credit card with <b>${{n.amount}}</b>
+                                                    </p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Withdrew Credit Card Funds" %}
-                                                    <p class="mdr">You withdrew <b>${{n.amount}}</b> from your credit card</p>
+                                                    <p class="mdr">You withdrew <b>${{n.amount}}</b> from your credit
+                                                        card</p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Deleted Credit Card" %}
                                                     <p class="mdr">You deleted your credit card</p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Added Credit Card" %}
-                                                    <p class="mdr">You added a new  credit card</p>
+                                                    <p class="mdr">You added a new credit card</p>
                                                     {% endif %}
-                                                        
+
                                                     <p class="mdr time-area">{{n.date}}</p>
                                                 </div>
                                             </a>
@@ -155,11 +159,14 @@
                                     <span class="user-profile">
                                         <!-- <img src="{% static 'assets1/images/avatar.png' %}" alt="User"> -->
                                         {% if request.user.kyc.image.url %}
-                                            <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" src="{{ request.user.kyc.image.url }}" alt="image">
+                                        <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;"
+                                            src="{{ request.user.kyc.image.url }}" alt="image">
                                         {% else %}
-                                            <img src="{% static 'assets1/images/default.jpg' %}"  style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" alt="">
+                                        <img src="{% static 'assets1/images/default.jpg' %}"
+                                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
+                                            alt="">
                                         {% endif %}
-                                    <!-- <img style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image"> -->
+                                        <!-- <img style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image"> -->
 
                                     </span>
                                     <i class="fa-solid fa-sort-down"></i>
@@ -168,32 +175,39 @@
                                     <div class="head-area d-flex align-items-center">
                                         <div class="profile-img">
                                             <!-- <img src="{% static 'assets1/images/avatar-2.png' %}" alt="User"> -->
-                                            
+
                                             {% if request.user.kyc.image.url %}
-                                            <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" src="{{ request.user.kyc.image.url }}" alt="image">
+                                            <img style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;"
+                                                src="{{ request.user.kyc.image.url }}" alt="image">
                                             {% else %}
-                                            <img src="{% static 'assets1/images/default.jpg' %}"  style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" alt="">
+                                            <img src="{% static 'assets1/images/default.jpg' %}"
+                                                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
+                                                alt="">
                                             {% endif %}
-                                                
+
 
                                         </div>
                                         <div class="profile-head">
                                             <a href="{% url 'account:account' %}">
                                                 <h5>{{kyc.full_name|title}}</h5>
                                             </a>
-                                            <p class="wallet-id"><small>Account No. {{ request.user.account.account_number }}</small></p>
-                                            <p class="wallet-id"><small>Pin No. {{ request.user.account.pin_number }}</small></p>
+                                            <p class="wallet-id"><small>Account No. {{
+                                                    request.user.account.account_number }}</small></p>
+                                            <p class="wallet-id"><small>Pin No. {{ request.user.account.pin_number
+                                                    }}</small></p>
                                         </div>
                                     </div>
                                     <ul>
                                         <li class="border-area">
-                                            <a href="{% url 'account:dashboard' %}"><i class="fas fa-user"></i>Dashboard</a>
+                                            <a href="{% url 'account:dashboard' %}"><i
+                                                    class="fas fa-user"></i>Dashboard</a>
                                         </li>
                                         <li class="border-area">
                                             <a href="javascript:void(0)"><i class="fas fa-cog"></i>Settings</a>
                                         </li>
                                         <li>
-                                            <a href="{% url 'userauths:sign-out' %}"><i class="fas fa-sign-out"></i>Logout</a>
+                                            <a href="{% url 'userauths:sign-out' %}"><i
+                                                    class="fas fa-sign-out"></i>Logout</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -205,17 +219,20 @@
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="sidebar-logo">
-                            <a href="{% url 'account:dashboard' %}"><img src="{% static 'assets1/images/logo.png' %}" alt="logo"></a>
+                            <a href="{% url 'account:dashboard' %}"><img src="{% static 'assets1/images/logo.png' %}"
+                                    alt="logo"></a>
                         </div>
                         <ul>
                             <li>
                                 <a href="{% url 'account:dashboard' %}">
-                                    <img src="{% static 'assets1/images/icon/dashboard.png' %}" alt="Dashboard"> <span>Dashboard</span>
+                                    <img src="{% static 'assets1/images/icon/dashboard.png' %}" alt="Dashboard">
+                                    <span>Dashboard</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{% url 'core:transactions' %}">
-                                    <img src="{% static 'assets1/images/icon/transactions.png' %}" alt="Transactions"> <span>Transactions</span>
+                                    <img src="{% static 'assets1/images/icon/transactions.png' %}" alt="Transactions">
+                                    <span>Transactions</span>
                                 </a>
                             </li>
                             <li>
@@ -225,44 +242,52 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive"> <span>Receive</span>
+                                    <img src="{% static 'assets1/images/icon/receive.png' %}" alt="Receive">
+                                    <span>Receive</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="money-exchange.html">
-                                    <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange"> <span>Exchange</span>
+                                    <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange">
+                                    <span>Exchange</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="recipients.html">
-                                    <img src="{% static 'assets1/images/icon/recipients.png' %}" alt="Recipients"> <span>Recipients</span>
+                                    <img src="{% static 'assets1/images/icon/recipients.png' %}" alt="Recipients">
+                                    <span>Recipients</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="crypto.html">
-                                    <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto"> <span>Crypto</span>
+                                    <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto">
+                                    <span>Crypto</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="deposit-money.html">
-                                    <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
+                                    <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit">
+                                    <span>Deposit Money</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="withdraw-money-step-1.html">
-                                    <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
+                                    <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw">
+                                    <span>Withdraw Money</span>
                                 </a>
                             </li>
                         </ul>
                         <ul class="bottom-item">
                             <li class="active">
                                 <a href="{% url 'account:account' %}">
-                                    <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account"> <span>Account</span>
+                                    <img src="{% static 'assets1/images/icon/account.png' %}" alt="Account">
+                                    <span>Account</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <img src="{% static 'assets1/images/icon/support.png' %}" alt="Support"> <span>Support</span>
+                                    <img src="{% static 'assets1/images/icon/support.png' %}" alt="Support">
+                                    <span>Support</span>
                                 </a>
                             </li>
                             <li>
@@ -285,32 +310,32 @@
             </div>
         </div>
         <!-- alert start -->
-        
+
         {% if messages %}
-            {% for m in messages %}
-            <div class="alert alert-{{m.tags}}">
-                <strong>{{m}}</strong>
-            </div>
-            {% endfor %}
+        {% for m in messages %}
+        <div class="alert alert-{{m.tags}}">
+            <strong>{{m}}</strong>
+        </div>
+        {% endfor %}
         {% endif %}
         <script>
-            setTimeout (() => {
+            setTimeout(() => {
                 $(".alert").alert("close");
             }, 4000)
         </script>
-        
+
         <!-- alert end -->
-        
+
 
     </header>
     <!-- header-section end -->
 
 
-{% block content %}
-  
-{% endblock content %}
+    {% block content %}
 
-    
+    {% endblock content %}
+
+
     <!--==================================================================-->
     <script src="{% static 'assets1/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets1/js/bootstrap.min.js' %}"></script>
