@@ -22,6 +22,17 @@ urlpatterns = [
 
     # Transactions
     path("transactions/", transaction.transaction_lists, name="transactions"),
+<<<<<<< HEAD
     path("transaction-detail/<transaction_id>/", transaction.transaction_detail, name="transaction-detail"),
 
+=======
+    path("transaction-detail/<transaction_id>/",
+         transaction.transaction_detail, name="transaction-detail"),
+
+    # Payment requests
+    path("request-search-account/", payment_request.SearchUsersRequest,
+         name="request-search-account"),
+    path("amount-request/<account_number>/",
+         payment_request.AmountRequest, name="amount-request"),
+>>>>>>> f04e3a4 (Entering amont to be rquested and checking validations)
 ]
