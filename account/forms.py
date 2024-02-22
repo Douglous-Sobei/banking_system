@@ -4,7 +4,7 @@ from django.forms import ImageField, FileInput, DateInput
 
 
 class DateInput(forms.DateInput):
-    input_type = "date"
+    input_type = 'date'
 
 
 class KYCForm(forms.ModelForm):
@@ -14,7 +14,7 @@ class KYCForm(forms.ModelForm):
 
     class Meta:
         model = KYC
-        fields = ['full_name', 'image', 'marital_status', 'gender', 'identity_type',
+        fields = ['full_name', 'image', 'marrital_status', 'gender', 'identity_type',
                   'identity_image', 'date_of_birth', 'signature', 'country', 'state', 'city', 'mobile', 'fax']
         widgets = {
             "full_name": forms.TextInput(attrs={"placeholder": "Full Name"}),
