@@ -1,7 +1,7 @@
 {% extends "partials/dashboard-base.html" %}
 {% load static %}
 {% block content %}
-<!-- Dashboard Section start -->
+    <!-- Dashboard Section start -->
 <section class="dashboard-section body-collapse account">
     <div class="overlay pt-120">
         <div class="container-fruid">
@@ -11,19 +11,18 @@
                         <div class="owner-details">
                             <div class="profile-area">
                                 <div class="profile-img">
-                                    <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
-                                        src="{{ kyc.image.url }}" alt="image">
+                                    <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image">
                                 </div>
                                 <div class="name-area">
                                     <h6>{{kyc.full_name|title}}</h6>
                                     {% if account.account_status == "in-active" %}
-                                    <p class="active-stadtus text-danger">{{account.account_status|title}}</p>
+                                        <p class="active-stadtus text-danger">{{account.account_status|title}}</p>
                                     {% endif %}
                                     {% if account.account_status == "active" %}
-                                    <p class="active-status">{{account.account_status|title}}</p>
+                                        <p class="active-status">{{account.account_status|title}}</p>
                                     {% endif %}
                                     {% if account.account_status == "pending" %}
-                                    <p class="actidve-status text-warning">{{account.account_status|title}}</p>
+                                        <p class="actidve-status text-warning">{{account.account_status|title}}</p>
                                     {% endif %}
                                 </div>
                             </div>
@@ -41,15 +40,15 @@
                                         <p>Joined:</p>
                                         <span class="mdr"><small>{{account.date|date:"d M, Y"}}</small></span>
                                     </li>
-
+                                    
                                 </ul>
                             </div>
                             <div class="owner-action">
-
+                                
                                 {% if request.user.is_authenticated %}
-
-
-
+                                    
+                                
+                                    
                                 <a href="{% url 'userauths:sign-out' %}">
                                     <img src="{% static 'assets1/images/icon/logout.png' %}" alt="image">
                                     Logout
@@ -93,8 +92,7 @@
                                         <div class="avatar-left d-flex align-items-center">
                                             <div class="profile-img">
                                                 <!-- <img src="{% static 'assets1/images/owner-profile-2.png' %}" alt="image"> -->
-                                                <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
-                                                    src="{{ kyc.image.url }}" alt="image">
+                                                <img style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" src="{{ kyc.image.url }}" alt="image">
                                             </div>
                                             <div class="instraction">
                                                 <h6>Your Avatar</h6>
@@ -117,81 +115,69 @@
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">Full Name</label>
-                                                    <input type="text" id="fName" readonly placeholder="Alfred"
-                                                        value="{{kyc.full_name|title}}">
+                                                    <input type="text" id="fName" readonly placeholder="Alfred" value="{{kyc.full_name|title}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="lName">Email</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.user.email }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.user.email }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="lName">Gender</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.gender|title }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.gender|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
-                                                    <label for="lName">Marital</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.marital_status|title }}">
+                                                    <label for="lName">Marrital</label>
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.marrital_status|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Date of Birth</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.date_of_birth|date:'d M, Y' }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.date_of_birth|date:'d M, Y' }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Mobile</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.mobile }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.mobile }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Identity Type</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.identity_type|title }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.identity_type|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Country</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.country|title }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.country|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">State</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.state|title }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.state|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">City</label>
-                                                    <input type="text" id="lName" placeholder="Davis"
-                                                        value="{{ kyc.city|title }}">
+                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.city|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ">
                                                 <div class="single-input">
                                                     <label for="fName">{{ kyc.identity_type|title }}</label>
-
+                                                    
                                                     {% if kyc.identity_image %}
-                                                    <img src="{{ kyc.identity_image.url }}"
-                                                        style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;"
-                                                        alt="">
+                                                    <img src="{{ kyc.identity_image.url }}" style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;" alt="">
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -199,9 +185,7 @@
                                                 <div class="single-input">
                                                     <label for="fName">Signature</label>
                                                     {% if kyc.signature %}
-                                                    <img src="{{ kyc.signature.url }}"
-                                                        style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;"
-                                                        alt="">
+                                                        <img src="{{ kyc.signature.url }}" style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;" alt="">
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -213,13 +197,12 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-                                    <div
-                                        class="single-content authentication d-flex align-items-center justify-content-between">
+                                <div class="tab-pane fade" id="security" role="tabpanel"
+                                    aria-labelledby="security-tab">
+                                    <div class="single-content authentication d-flex align-items-center justify-content-between">
                                         <div class="left">
                                             <h5>Two Factor Authentication</h5>
-                                            <p>Two-Factor Authentication (2FA) can be used to help protect your account
-                                            </p>
+                                            <p>Two-Factor Authentication (2FA) can be used to help protect your account</p>
                                         </div>
                                         <div class="right">
                                             <button>Enable</button>
@@ -229,8 +212,7 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <h5>Change Password</h5>
-                                                <p>You can always change your password for security reasons or reset
-                                                    your password in case you forgot it.</p>
+                                                <p>You can always change your password for security reasons or reset your password in case you forgot it.</p>
                                                 <a href="javascript:void(0)">Forgot password?</a>
                                             </div>
                                             <div class="col-sm-6">
@@ -239,23 +221,19 @@
                                                         <div class="col-md-12">
                                                             <div class="single-input">
                                                                 <label for="current-password">Current password</label>
-                                                                <input type="text" id="current-password"
-                                                                    placeholder="Current password">
+                                                                <input type="text" id="current-password" placeholder="Current password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="single-input">
                                                                 <label for="new-password">New password</label>
-                                                                <input type="text" id="new-password"
-                                                                    placeholder="New password">
+                                                                <input type="text" id="new-password" placeholder="New password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="single-input">
-                                                                <label for="confirm-password">Confirm New
-                                                                    password</label>
-                                                                <input type="text" id="confirm-password"
-                                                                    placeholder="Confirm New password">
+                                                                <label for="confirm-password">Confirm New password</label>
+                                                                <input type="text" id="confirm-password" placeholder="Confirm New password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -353,38 +331,28 @@
                                         <h6>Linked Payment system</h6>
                                         <div class="card-content d-flex flex-wrap">
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/visa-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/visa-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/paylio-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/paylio-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/paypal-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/paypal-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/blockchain-card.png' %}"
-                                                        alt="image" class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/blockchain-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#addcardMod">
-                                                    <img src="{% static 'assets1/images/add-new.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#addcardMod">
+                                                    <img src="{% static 'assets1/images/add-new.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                         </div>
@@ -456,8 +424,7 @@
                         <div class="modal-content">
                             <div class="modal-header justify-content-between">
                                 <h6>Add Card</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                        class="fa-solid fa-xmark"></i></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <form action="#">
                                 <div class="row justify-content-center">
@@ -510,24 +477,21 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header justify-content-between">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                        class="fa-solid fa-xmark"></i></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <div class="main-content">
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <h5>My Cards</h5>
                                         <div class="icon-area">
-                                            <img src="{% static 'assets1/images/popup-card.png' %}" alt="image"
-                                                class="w-100">
+                                            <img src="{% static 'assets1/images/popup-card.png' %}" alt="image" class="w-100">
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="right-area">
                                             <div class="top-area d-flex align-items-center justify-content-between">
                                                 <div class="card-details d-flex align-items-center">
-                                                    <img src="{% static 'assets1/images/icon/mastercard.png' %}"
-                                                        alt="image">
+                                                    <img src="{% static 'assets1/images/icon/mastercard.png' %}" alt="image">
                                                     <span>5880 **** **** 8854</span>
                                                 </div>
                                                 <a href="javascript:void(0)">
@@ -573,4 +537,4 @@
     </div>
 </div>
 <!-- My Card Popup start -->
-{% endblock content %}
+    {% endblock content %}

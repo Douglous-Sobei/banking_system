@@ -23,15 +23,7 @@ def SearchUsersRequest(request):
     }
     return render(request, "payment_request/search-users.html", context)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-# amount reques
-=======
->>>>>>> f04e3a4 (Entering amont to be rquested and checking validations)
 
-=======
-# amount reques
->>>>>>> 3989be4 (update)
 def AmountRequest(request, account_number):
     account = Account.objects.get(account_number=account_number)
     context = {

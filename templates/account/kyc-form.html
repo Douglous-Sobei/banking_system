@@ -1,95 +1,88 @@
 {% extends "partials/dashboard-base.html" %}
 {% load static %}
 {% block content %}
-<!-- Dashboard Section start -->
-
-<head>
-    <style>
-        #id_image {
-            background-color: #432f9f;
-            /* border: 1px solid #e2e9f3; */
-            border-radius: 4px;
-            height: 50px;
-            width: 100%;
-            color: #ffffff;
-        }
-
-        #id_image::file-selector-button {
-            border: none;
-            border-radius: 7px;
-            color: 432f9f;
-            background-color: #ffffff;
-            /* border: 1px solid #595ef1bd; */
-            height: 30px;
-            cursor: pointer;
-            transition: all .25s ease-in;
-        }
-
-        #id_image::file-selector-button:hover,
-        #id_identity_type::file-selector-button:hover {
-            background-color: #fff;
-            color: #565A90;
-            transition: all .25s ease-in;
-        }
-
-
-        #id_identity_image {
-            background-color: #432f9f;
-            /* border: 1px solid #e2e9f3; */
-            border-radius: 4px;
-            height: 50px;
-            width: 100%;
-            color: #ffffff;
-        }
-
-        #id_identity_image::file-selector-button {
-            border: none;
-            border-radius: 7px;
-            color: 432f9f;
-            background-color: #ffffff;
-            /* border: 1px solid #595ef1bd; */
-            height: 30px;
-            cursor: pointer;
-            transition: all .25s ease-in;
-        }
-
-        #id_identity_image::file-selector-button:hover {
-            background-color: #fff;
-            color: #565A90;
-            transition: all .25s ease-in;
-        }
-
-
-
-
-
-        #id_signature {
-            background-color: #432f9f;
-            /* border: 1px solid #e2e9f3; */
-            border-radius: 4px;
-            height: 50px;
-            width: 100%;
-            color: #ffffff;
-        }
-
-        #id_signature::file-selector-button {
-            border: none;
-            border-radius: 7px;
-            color: 432f9f;
-            background-color: #ffffff;
-            /* border: 1px solid #595ef1bd; */
-            height: 30px;
-            cursor: pointer;
-            transition: all .25s ease-in;
-        }
-
-        #id_signature::file-selector-button:hover {
-            background-color: #fff;
-            color: #565A90;
-            transition: all .25s ease-in;
-        }
-    </style>
-</head>
+    <!-- Dashboard Section start -->
+    <head>
+        <style>
+            #id_image{
+                background-color: #432f9f;
+                /* border: 1px solid #e2e9f3; */
+                border-radius: 4px;
+                height: 50px;
+                width: 100%;
+                color: #ffffff;
+            }
+            #id_image::file-selector-button{
+                border: none;
+                border-radius: 7px;
+                color: 432f9f;
+                background-color: #ffffff;
+                /* border: 1px solid #595ef1bd; */
+                height: 30px;
+                cursor: pointer;
+                transition: all .25s ease-in;
+            }
+            #id_image::file-selector-button:hover,
+            #id_identity_type::file-selector-button:hover{
+                background-color: #fff;
+                color: #565A90;
+                transition: all .25s ease-in;
+            }
+    
+    
+            #id_identity_image{
+                background-color: #432f9f;
+                /* border: 1px solid #e2e9f3; */
+                border-radius: 4px;
+                height: 50px;
+                width: 100%;
+                color: #ffffff;
+            }
+            #id_identity_image::file-selector-button{
+                border: none;
+                border-radius: 7px;
+                color: 432f9f;
+                background-color: #ffffff;
+                /* border: 1px solid #595ef1bd; */
+                height: 30px;
+                cursor: pointer;
+                transition: all .25s ease-in;
+            }
+            #id_identity_image::file-selector-button:hover{
+                background-color: #fff;
+                color: #565A90;
+                transition: all .25s ease-in;
+            }
+    
+    
+    
+    
+            
+            #id_signature{
+                background-color: #432f9f;
+                /* border: 1px solid #e2e9f3; */
+                border-radius: 4px;
+                height: 50px;
+                width: 100%;
+                color: #ffffff;
+            }
+            #id_signature::file-selector-button{
+                border: none;
+                border-radius: 7px;
+                color: 432f9f;
+                background-color: #ffffff;
+                /* border: 1px solid #595ef1bd; */
+                height: 30px;
+                cursor: pointer;
+                transition: all .25s ease-in;
+            }
+            #id_signature::file-selector-button:hover{
+                background-color: #fff;
+                color: #565A90;
+                transition: all .25s ease-in;
+            }
+        </style>
+    </head>
 <section class="dashboard-section body-collapse account">
     <div class="overlay pt-120">
         <div class="container-fruid">
@@ -99,8 +92,7 @@
                         <div class="owner-details">
                             <div class="profile-area">
                                 <div class="profile-img">
-                                    <img src="{% static 'assets1/images/default.jpg' %}"
-                                        style="border-radius: 50%; width: 100px; height: 100px; " alt="image">
+                                    <img src="{% static 'assets1/images/default.jpg' %}" style="border-radius: 50%; width: 100px; height: 100px; " alt="image">
                                 </div>
                                 <div class="name-area">
                                     <h6>{{request.user.username|title}}</h6>
@@ -143,7 +135,7 @@
                                         data-bs-target="#account" type="button" role="tab" aria-controls="account"
                                         aria-selected="true">KYC Registration Form</button>
                                 </li>
-
+                                
                             </ul>
                             <div class="tab-content mt-40">
                                 <div class="tab-pane fade show active" id="account" role="tabpanel"
@@ -153,9 +145,7 @@
                                         <div class="upload-avatar">
                                             <div class="avatar-left d-flex align-items-center">
                                                 <div class="profile-img">
-                                                    <img src="{% static 'assets1/images/default.jpg' %}"
-                                                        style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
-                                                        alt="image">
+                                                    <img src="{% static 'assets1/images/default.jpg' %}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;" alt="image">
                                                 </div>
                                                 <div class="instraction">
                                                     <h6>Your Avatar</h6>
@@ -166,64 +156,64 @@
                                                 {{form.image}}
                                             </div>
                                         </div>
-
+                                    
                                         <div class="row justify-content-center">
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">Full Name</label>
-                                                    {{form.full_name}}
+                                                   {{form.full_name}}
                                                 </div>
                                             </div>
-
+                                            
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">Mobile Number</label>
-                                                    {{form.mobile}}
+                                                   {{form.mobile}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">Country</label>
-                                                    {{form.country}}
+                                                   {{form.country}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">State</label>
-                                                    {{form.state}}
+                                                   {{form.state}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">City</label>
-                                                    {{form.city}}
+                                                   {{form.city}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="fName">Fax</label>
-                                                    {{form.fax}}
+                                                   {{form.fax}}
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="single-input">
                                                     <label for="fName">Date Of Birth</label>
-                                                    {{form.date_of_birth}}
+                                                   {{form.date_of_birth}}
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    {{form.gender}}
+                                                   {{form.gender}}
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    {{form.marrital_status}}
+                                                   {{form.marrital_status}}
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
-                                                    {{form.identity_type}}
+                                                   {{form.identity_type}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6 " style="padding-top: 50px;">
@@ -232,9 +222,7 @@
 
                                                     {{form.identity_image}}
                                                     {% if kyc.identity_image %}
-                                                    <img src="{{ kyc.identity_image.url }}"
-                                                        style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;"
-                                                        alt="">
+                                                        <img src="{{ kyc.identity_image.url }}" style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;" alt="">
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -244,9 +232,7 @@
 
                                                     {{form.signature}}
                                                     {% if kyc.signature %}
-                                                    <img src="{{ kyc.signature.url }}"
-                                                        style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;"
-                                                        alt="">
+                                                        <img src="{{ kyc.signature.url }}" style="width: 100%; height: 200px; border-radius: 10px; object-fit: cover; padding-top: 10px;" alt="">
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -259,7 +245,7 @@
 
 
 
-                                            <!--                                             
+<!--                                             
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="email">Email</label>
@@ -315,7 +301,7 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-
+                                            
                                             <div class="col-md-12">
                                                 <div class="btn-border">
                                                     <button class="cmn-btn" type="submit">Submit KYC</button>
@@ -324,13 +310,12 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-                                    <div
-                                        class="single-content authentication d-flex align-items-center justify-content-between">
+                                <div class="tab-pane fade" id="security" role="tabpanel"
+                                    aria-labelledby="security-tab">
+                                    <div class="single-content authentication d-flex align-items-center justify-content-between">
                                         <div class="left">
                                             <h5>Two Factor Authentication</h5>
-                                            <p>Two-Factor Authentication (2FA) can be used to help protect your account
-                                            </p>
+                                            <p>Two-Factor Authentication (2FA) can be used to help protect your account</p>
                                         </div>
                                         <div class="right">
                                             <button>Enable</button>
@@ -340,8 +325,7 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <h5>Change Password</h5>
-                                                <p>You can always change your password for security reasons or reset
-                                                    your password in case you forgot it.</p>
+                                                <p>You can always change your password for security reasons or reset your password in case you forgot it.</p>
                                                 <a href="javascript:void(0)">Forgot password?</a>
                                             </div>
                                             <div class="col-sm-6">
@@ -350,23 +334,19 @@
                                                         <div class="col-md-12">
                                                             <div class="single-input">
                                                                 <label for="current-password">Current password</label>
-                                                                <input type="text" id="current-password"
-                                                                    placeholder="Current password">
+                                                                <input type="text" id="current-password" placeholder="Current password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="single-input">
                                                                 <label for="new-password">New password</label>
-                                                                <input type="text" id="new-password"
-                                                                    placeholder="New password">
+                                                                <input type="text" id="new-password" placeholder="New password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="single-input">
-                                                                <label for="confirm-password">Confirm New
-                                                                    password</label>
-                                                                <input type="text" id="confirm-password"
-                                                                    placeholder="Confirm New password">
+                                                                <label for="confirm-password">Confirm New password</label>
+                                                                <input type="text" id="confirm-password" placeholder="Confirm New password">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -464,38 +444,28 @@
                                         <h6>Linked Payment system</h6>
                                         <div class="card-content d-flex flex-wrap">
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/visa-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/visa-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/paylio-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/paylio-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/paypal-card.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/paypal-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/blockchain-card.png' %}"
-                                                        alt="image" class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
+                                                    <img src="{% static 'assets1/images/blockchain-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
-                                                <button type="button" class="reg w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#addcardMod">
-                                                    <img src="{% static 'assets1/images/add-new.png' %}" alt="image"
-                                                        class="w-100">
+                                                <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#addcardMod">
+                                                    <img src="{% static 'assets1/images/add-new.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                         </div>
@@ -567,8 +537,7 @@
                         <div class="modal-content">
                             <div class="modal-header justify-content-between">
                                 <h6>Add Card</h6>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                        class="fa-solid fa-xmark"></i></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <form action="#">
                                 <div class="row justify-content-center">
@@ -621,24 +590,21 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header justify-content-between">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                        class="fa-solid fa-xmark"></i></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <div class="main-content">
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <h5>My Cards</h5>
                                         <div class="icon-area">
-                                            <img src="{% static 'assets1/images/popup-card.png' %}" alt="image"
-                                                class="w-100">
+                                            <img src="{% static 'assets1/images/popup-card.png' %}" alt="image" class="w-100">
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="right-area">
                                             <div class="top-area d-flex align-items-center justify-content-between">
                                                 <div class="card-details d-flex align-items-center">
-                                                    <img src="{% static 'assets1/images/icon/mastercard.png' %}"
-                                                        alt="image">
+                                                    <img src="{% static 'assets1/images/icon/mastercard.png' %}" alt="image">
                                                     <span>5880 **** **** 8854</span>
                                                 </div>
                                                 <a href="javascript:void(0)">
@@ -684,4 +650,4 @@
     </div>
 </div>
 <!-- My Card Popup start -->
-{% endblock content %}
+    {% endblock content %}
