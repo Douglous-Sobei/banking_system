@@ -106,3 +106,13 @@ def RequestCompleted(request, account_number, transaction_id):
         "transaction": transaction,
     }
     return render(request, "payment_request/amount-request-completed.html", context)
+
+def settlement_confirmation(request, account_number,transaction_id):
+    account = Account.objects.get(account_number=account_number)
+    transaction = Transaction.objects.get(transaction_id=transaction_id)
+
+    context = {
+        "account": account,
+        "transaction": transaction,
+    }
+    return render(request, "payment_request/settlement-confirmation.html", context)
