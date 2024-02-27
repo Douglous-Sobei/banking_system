@@ -47,6 +47,8 @@ NOTIFICATION_TYPE = (
 
 )
 
+# Transaction
+
 
 class Transaction(models.Model):
     transaction_id = ShortUUIDField(
@@ -82,6 +84,7 @@ class Transaction(models.Model):
             return f"Transaction"
 
 
+# credit card
 class CreditCard(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     card_id = ShortUUIDField(
