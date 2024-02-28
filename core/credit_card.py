@@ -36,3 +36,25 @@ def fund_credit_card(request, card_id):
         else:
             messages.warning(request, "Insufficient fund")
             return redirect("core:card-detail", credit_card.card_id)
+
+
+def withdraw_fund(request, card_id):
+    credit_card = CreditCard.objects.get(card_id=card_id, user=request.user)
+    account = request.user.account
+
+    if request.method == "POST":
+        amount = request.POST.get("amount")
+        print(amount)
+
+        if credit_card.amount >= Decimal(amount):
+            account.account_balance += Decimal(amount)
+            account.save()
+
+            credit_card.amount -= Decimal(amount)
+            credit_card.save()
+
+            messages.success(request, "Withdrawal was successful")
+            return redirect("core:card-detail", credit_card.card_id)
+        else:
+            messages.warning(request, "Insufficient fund")
+            return redirect("core:card-detail", credit_card.card_id)
