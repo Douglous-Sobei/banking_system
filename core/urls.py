@@ -53,5 +53,7 @@ urlpatterns = [
          payment_request.deletePaymentRequest, name="delete-request"),
 
     # Credit cards
-    path("card/<card_id>/", credit_card.card_detail, name="card-detail")
+    path("card/<card_id>/", credit_card.card_detail, name="card-detail"),
+    path("fund-credit-card/<card_id>/",
+         credit_card.fund_credit_card, name="fund-credit-card"),
 ]
