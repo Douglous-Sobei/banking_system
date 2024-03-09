@@ -33,11 +33,6 @@ ALLOWED_HOSTS = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    'https://bankingsystem-production.up.railway.app',
-    # Add other allowed origins if needed
-]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,15 +53,21 @@ INSTALLED_APPS = [
 
 ]
 
+# Define your CORS allowed origins
+CORS_ALLOWED_ORIGINS = [
+    'https://bankingsystem-production.up.railway.app',
+    # Add other allowed origins if needed
+]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "backsystem.urls"
