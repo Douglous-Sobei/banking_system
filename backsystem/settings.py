@@ -27,8 +27,6 @@ SECRET_KEY = "django-insecure-ynmq$83b#dkwtnz)x36m!sujtexb@htf&vv#@e3ihd#ql739^v
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['*']
-
 
 # Application definition
 
