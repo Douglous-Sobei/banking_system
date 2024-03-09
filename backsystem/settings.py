@@ -26,7 +26,10 @@ SECRET_KEY = "django-insecure-ynmq$83b#dkwtnz)x36m!sujtexb@htf&vv#@e3ihd#ql739^v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+CORS_ALLOWED_ORIGINS = [
+    'https://bankingsystem-production.up.railway.app',
+    # Add other allowed origins if needed
+]
 
 # Application definition
 
