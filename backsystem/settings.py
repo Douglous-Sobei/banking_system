@@ -24,12 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ynmq$83b#dkwtnz)x36m!sujtexb@htf&vv#@e3ihd#ql739^v"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost',  # Add localhost if needed
-    '127.0.0.1',  # Add 127.0.0.1 if needed
-    'bankingsystem-production.up.railway.app',  # Add your hostname here
+    "*"
 ]
 
 
@@ -45,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
 
     'import_export',
-    "corsheaders",
 
     "core",
     "userauths",
@@ -53,11 +50,6 @@ INSTALLED_APPS = [
 
 ]
 
-# Define your CORS allowed origins
-CORS_ALLOWED_ORIGINS = [
-    'https://bankingsystem-production.up.railway.app',
-    # Add other allowed origins if needed
-]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
