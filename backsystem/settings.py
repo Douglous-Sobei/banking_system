@@ -23,7 +23,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # Secret key for production (update this with a secure key)
-SECRET_KEY = "django-insecure-ynmq$83b#dkwtnz)x36m!sujtexb@htf&vv#@e3ihd#ql739^v"
+SECRET_KEY = 'os.environ.get("SECRET_KEY")'
 
 # Application definition
 INSTALLED_APPS = [
