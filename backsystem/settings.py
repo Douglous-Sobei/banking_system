@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
+    "jazzmin",
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -137,8 +139,50 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Custom user model
 AUTH_USER_MODEL = "userauths.User"
 
+JAZZMIN_SETTINGS = {
+    # "site_title": "MovieX",
+    "site_header": "Paylio",
+    "site_brand": "Payment Made Easy...",
+    # "site_logo": "images/logo.jpg",
+    "copyright": "Paylio - All RIght Reserverd © Copyright 2023",
+    # "order_with_respect_to": ["core", 'userauths', "transactions" , 'addon', 'blog']
+
+
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-indigo",
+    "accent": "accent-olive",
+    "navbar": "navbar-indigo navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-dark-indigo",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "cyborg",
+    "dark_mode_theme": "cyborg",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
+
 # CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    # Add Railway domain to trusted origins
-    "https://bankingsystem-production.up.railway.app/",
+    "https://banksystem-production.up.railway.app"
 ]
